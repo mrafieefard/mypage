@@ -32,7 +32,7 @@ function Skill(lang: string, skills: Array<skillProp>) {
                 key={value.name}
                 label={
                   value.link ? (
-                    <Link href={value.link}>{value.name}</Link>
+                    <Link target="_blank" href={value.link}>{value.name}</Link>
                   ) : (
                     value.name
                   )
