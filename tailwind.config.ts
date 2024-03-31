@@ -9,9 +9,14 @@ const config: Config = {
     "./node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    screens:{
+      'md' : '960px'
+    },
+    extend: {
+      
+    },
   },
-  darkMode: "class",
+
   plugins: [nextui()],
 };
 export default config;
