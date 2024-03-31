@@ -6,16 +6,15 @@ interface skillProp {
 }
 
 
-function Skill(lang: String, skills: Array<skillProp>) {
+function Skill(lang: string, skills: Array<skillProp>) {
     return (
-      <>
-        <Card className="h-auto flex flex-col justify-start items-center">
+        <Card className="h-auto flex flex-col justify-start items-center" key={lang}>
           <CardHeader className="text-center font-bold">{lang}</CardHeader>
           <CardBody>
             <Card>
               <CardBody>
                 {skills.map((value) => (
-                  <Progress
+                  <Progress key={value.name}
                     label={value.name}
                     value={value.amont}
                     showValueLabel
@@ -26,7 +25,6 @@ function Skill(lang: String, skills: Array<skillProp>) {
             </Card>
           </CardBody>
         </Card>
-      </>
     );
   }
   
