@@ -9,9 +9,11 @@ import {
 
 import { AppNavbar } from "./Components/navbar";
 
+const config = require("../mypage.config.json");
+
 export const metadata: Metadata = {
-  title: "Mohammad Rafieefard",
-  description: "Mohammad Rafieefard biography web site",
+  title: config.name,
+  description: `${config.name}'s web page`,
 };
 
 export default function RootLayout({
