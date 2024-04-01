@@ -37,3 +37,6 @@ next-env.d.ts
 
 # Config
 mypage.config.json
+
+#Image
+/public/profile.*
