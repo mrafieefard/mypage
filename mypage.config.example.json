@@ -1,0 +1,56 @@
+{
+  "links": {
+    "Github": "https://github.com/mrafieefard"
+  },
+  "about": {
+    "title": "Hey, I'm Mohamamd",
+    "description": "Welcome to my webpage! I'm Mohammad Rafieefard, born on July 25th, 2007 in Iran Isfahan. I'm a junior full-stack developer proficient in Python, JavaScript, React, and Flutter. Currently, I'm actively learning and sharing my projects on Github so that others can benefit from them. Feel free to explore and utilize my work!"
+  },
+  "skills": {
+    "Python": [
+      {
+        "name": "Flask",
+        "progress": 40,
+        "link": "https://flask.palletsprojects.com/en"
+      },
+      {
+        "name": "Selenium",
+        "progress": 60,
+        "link": "https://www.selenium.dev/"
+      },
+      {
+        "name": "BeautifulSoup",
+        "progress": 40,
+        "link": "https://www.crummy.com/software/BeautifulSoup/"
+      },
+      {
+        "name": "Telethon",
+        "progress": 30,
+        "link": "https://github.com/LonamiWebs/Telethon"
+      },
+      {
+        "name": "Discord.py",
+        "progress": 80,
+        "link": "https://github.com/Rapptz/discord.py"
+      },
+      {
+        "name": "Instagrapi",
+        "progress": 70,
+        "link": "https://github.com/subzeroid/instagrapi"
+      }
+    ],
+    "JavaScript": [
+      { "name": "Next.js", "progress": 20, "link": "https://nextjs.org/" },
+      { "name": "React", "progress": 25, "link": "https://reactjs.org/" },
+      { "name": "Material Ui", "progress": 10, "link": "https://mui.com/" },
+      { "name": "NextUi", "progress": 15, "link": "https://nextui.org/" }
+    ],
+    "Web": [
+      { "name": "HTML / CSS", "progress": 70, "link": null },
+      { "name": "Tailwind", "progress": 40, "link": "https://tailwindcss.com/" }
+    ],
+    "Dart": [
+      { "name": "Flutter", "progress": 35, "link": "https://flutter.dev/" }
+    ]
+  }
+}
