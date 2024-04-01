@@ -3,6 +3,7 @@ RUN git clone https://github.com/mrafieefard/mypage app
 
 WORKDIR /app
 COPY mypage.config.json ./
+COPY profile.* ./
 RUN npm install
 RUN npm run build
 EXPOSE 3000
