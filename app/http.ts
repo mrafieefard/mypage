@@ -1,8 +1,5 @@
-import axios, {
-  AxiosResponse,
-  AxiosRequestConfig,
-  RawAxiosRequestHeaders,
-} from "axios";
+import axios from "axios";
+const config = require("../mypage.config.json");
 
 interface props {
   state: any;
@@ -16,12 +13,12 @@ class Http {
   });
   public async get_repos(props: props) {
     props.state = [];
-    const response = await this.client.get("/users/mrafieefard/repos");
+    const response = await this.client.get(`/users/${config.links.Github.split("/").at(-1)}/repos`);
     for (const repo in response.data) {
       const repo_data = response.data[repo];
       if (!repo_data.disabled) {
         const commits = await this.client.get(
-          `/repos/mrafieefard/${repo_data.name}/commits`
+          `/repos/${config.links.Github.split("/").at(-1)}/${repo_data.name}/commits`
         );
         props.state.push({
           name: repo_data.name,

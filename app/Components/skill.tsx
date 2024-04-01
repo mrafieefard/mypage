@@ -1,4 +1,5 @@
 import { Card, CardBody, CardHeader, Link, Progress } from "@nextui-org/react";
+const config = require("../../mypage.config.json");
 
 interface skillProp {
   name: string;
@@ -8,9 +9,9 @@ interface skillProp {
 
 function convertSkillColor(progress : number){
   if (progress < 50){
-    return "primary"
-  }else if (progress >= 50 && progress < 70){
     return "warning"
+  }else if (progress >= 50 && progress < 70){
+    return "primary"
   }else if (progress >= 70){
     return "success"
   }
@@ -32,7 +33,7 @@ function Skill(lang: string, skills: Array<skillProp>) {
                 key={value.name}
                 label={
                   value.link ? (
-                    <Link target="_blank" href={value.link}>{value.name}</Link>
+                    <Link color={convertSkillColor(value.progress)} target="_blank" href={value.link}>{value.name}</Link>
                   ) : (
                     value.name
                   )
@@ -49,48 +50,20 @@ function Skill(lang: string, skills: Array<skillProp>) {
   );
 }
 
+function parseSkillConfig(){
+  const skills = []
+  for (const skill in config.skills){
+    skills.push(Skill(skill,config.skills[skill]))
+  }
+  return skills
+}
+
 export function Skills() {
   return (
     <>
-      {Skill("Python", [
-        {
-          name: "Flask",
-          progress: 40,
-          link: "https://flask.palletsprojects.com/en",
-        },
-        { name: "Selenium", progress: 60, link: "https://www.selenium.dev/" },
-        {
-          name: "BeautifulSoup",
-          progress: 40,
-          link: "https://www.crummy.com/software/BeautifulSoup/",
-        },
-        {
-          name: "Telethon",
-          progress: 30,
-          link: "https://github.com/LonamiWebs/Telethon",
-        },
-        {
-          name: "Discord.py",
-          progress: 80,
-          link: "https://github.com/Rapptz/discord.py",
-        },
-        {
-          name: "Instagrapi",
-          progress: 70,
-          link: "https://github.com/subzeroid/instagrapi",
-        },
-      ])}
-      {Skill("Javascript", [
-        { name: "Next.js", progress: 20, link: "https://nextjs.org/" },
-        { name: "React", progress: 25, link: "https://reactjs.org/" },
-        { name: "Material Ui", progress: 10, link: "https://mui.com/" },
-        { name: "NextUi", progress: 15, link: "https://nextui.org/" },
-      ])}
-      {Skill("Web", [
-        { name: "HTML / CSS", progress: 70, link: null },
-        { name: "Tailwind", progress: 40, link: "https://tailwindcss.com/" },
-      ])}
-      {Skill("Dart", [{ name: "Flutter", progress: 35, link: "https://flutter.dev/" }])}
+      {
+        parseSkillConfig()
+      }
     </>
   );
 }
