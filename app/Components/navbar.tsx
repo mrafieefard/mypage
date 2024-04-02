@@ -10,7 +10,7 @@ import {
 } from "@nextui-org/react";
 
 import ContactMeModal from "../Modals/contact_me";
-
+const config = require("../../mypage.config.json");
 
 
 
@@ -21,7 +21,7 @@ export function AppNavbar() {
     <Navbar className="mb-10 z-50">
       <NavbarBrand>
         <p className="font-bold text-inherit">
-          M.Rafieefard
+          {config.header.title}
         </p>
       </NavbarBrand>
       <NavbarContent className="hidden sm:flex gap-4" justify="center">
