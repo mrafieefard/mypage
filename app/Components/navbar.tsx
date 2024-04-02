@@ -44,7 +44,7 @@ export function AppNavbar() {
       <NavbarContent justify="end">
         <NavbarItem></NavbarItem>
         <NavbarItem>
-          <Button as={Link} onClick={onOpen} color="primary" variant="bordered">
+          <Button isDisabled as={Link} onClick={onOpen} color="primary" variant="bordered">
             Contact Me
           </Button>
         </NavbarItem>
